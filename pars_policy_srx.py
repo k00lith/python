@@ -9,7 +9,8 @@ path = input('Insert path where logs are ( for example: /var/logs/ ): ')
 target = input('Insert security policy name ( for example: default-policy-1 ): ')
 
 #file = open('/home/python/Desktop/test_log.txt', 'r')
-regex = r'.+ session created (\d+\.\d+\.\d+\.\d+)/(\d+)->(\d+\.\d+\.\d+\.\d+)/(\d+) .+ None None (\d+)'
+#regex = r'.+ session created (\d+\.\d+\.\d+\.\d+)/(\d+)->(\d+\.\d+\.\d+\.\d+)/(\d+) .+ None None (\d+)'
+regex = r'.+ (\d+\.\d+\.\d+\.\d+)/(\d+)->(\d+\.\d+\.\d+\.\d+)/(\d+) None None (\d+) .+'
 pre_list_ports = []
 res_list_ports = []
 logs = os.listdir(path)
