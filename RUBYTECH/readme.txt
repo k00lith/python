@@ -1,4 +1,5 @@
 Scripts for rubytech switches
+==============================================================
 
 Установка python 3.7 yf CentOS7:
 
