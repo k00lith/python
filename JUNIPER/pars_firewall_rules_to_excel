@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+#from sys import argv
+import os
+import re
+import glob
+import xlwt
+
+
+
+#file_path = input('Insert path where config file are ( for example: /var/logs/conf.cfg ): ')
+file_path = 'D:\TEST_CFG\cfgt.txt'
+
+book = xlwt.Workbook(encoding="utf-8")
+sheet1 = book.add_sheet("Firewall List #1") 
+
+
+filter_name_regex = r'.+ filter (.+) .+'
+filter_term_regex = r'.+ term (.+) .+'
+source_name_regex = r'(.+);'
+
+with open(file_path, 'r') as f:
+    n = 0
+    for line in f:
+        if 'filter' in line:
+            match = re.match(filter_name_regex, line)
+            name_filter = ''
+            if match:
+                n = n + 1
+                name_filter = match.group(1)
+                sheet1.write(n, 1, name_filter)
+        if 'term' in line:
+            match = re.match(filter_term_regex, line)
+            name_term = ''
+            if match:
+                n = n + 1
+                name_term = match.group(1)
+                sheet1.write(n, 2, name_term)
+        if 'source-prefix-list' in line:
+            sheet1.write(n, 3, "IN -----> SRX")    
+        
+        '''
+        match = re.match(source_name_regex, line)
+        name_source = ''
+        if match.group(1) in line:
+            n = n + 1
+            name_source = match.group(1)
+            sheet1.write(n, 3, name_source)
+        '''
+book.save("firewall_table1.xls")
