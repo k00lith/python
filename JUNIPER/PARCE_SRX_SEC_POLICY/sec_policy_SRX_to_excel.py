@@ -10,12 +10,12 @@ import xlwt
 
 
 #file_path = input('Insert path where config file are ( for example: /var/logs/conf.cfg ): ')
-file_path = 'D:\TEST_CFG\policy_16-03-2020.txt'
+file_path = 'D:\TEST_CFG\policy_config.txt'
 
 book = xlwt.Workbook(encoding="utf-8")
 sheet1 = book.add_sheet("SRX_POLICY_List_#1") 
 
-FILTER_ZONES = r'.+ from-zone (.+) to-zone (.+) .+'
+FILTER_ZONES = r'from-zone (.+) to-zone (.+) .+'
 FILTER_POLIC = r'.+ policy (.+) .+'
 FILTER_SOURC = r'.+ source-address (.+)'
 FILTER_DESTN = r'.+ destination-address (.+)'
