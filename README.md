@@ -1,2 +1,2 @@
-# scripts
-for_work
+# PYTHON_FOR_WORK
+
