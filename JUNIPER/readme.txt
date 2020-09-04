@@ -1,7 +1,12 @@
 Scripts for JUNOS
 ==============================================================
 
-Установка python 3.7 yf CentOS7:
+Установка python 3.7 на CentOS7:
+
+yum update
+
+yum install zlib-devel
+yum install openssl-devel
 
 cd /usr/src 
 wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
