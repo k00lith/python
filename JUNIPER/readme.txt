@@ -5,9 +5,7 @@ Install python 3.7 на CentOS7:
 
 yum update
 
-yum install zlib-devel
-yum install openssl-devel
-yum install gcc
+yum install openssl-devel zlib-devel libffi-devel gcc -y
 
 cd /usr/src 
 wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
