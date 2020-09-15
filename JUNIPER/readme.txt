@@ -1,7 +1,7 @@
 Scripts for JUNOS
 ==============================================================
 
-Установка python 3.7 на CentOS7:
+Install python 3.7 на CentOS7:
 
 yum update
 
