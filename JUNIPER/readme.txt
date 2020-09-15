@@ -7,6 +7,7 @@ yum update
 
 yum install zlib-devel
 yum install openssl-devel
+yum install gcc
 
 cd /usr/src 
 wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
