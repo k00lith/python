@@ -49,6 +49,6 @@ HOW USE IT IN PYTHON CODE:
 
 ```py
 import os
-U_user=os.getenv('FIRE_U_U')
-U_password=os.getenv('FIRE_P_U')
+U_user = os.getenv('FIRE_U_U')
+U_password = os.getenv('FIRE_P_U')
 ```
