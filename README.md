@@ -18,6 +18,13 @@ Install python 3.7 на CentOS7:
 # pip3.7 install --upgrade pip
 ```
 
+Если нужно чтобы python был в директории /usr/bin/ (например /usr/bin/python3.7)
+```sh
+# ./configure --prefix=/usr  --enable-optimizations
+# make
+# make install
+```
+
 Sometimes you have to reinstall pip yourself (it happens for example when you can't install modul netmiko because of stupid error you don't know, as fast resolve it is good, one time it helps me :)):
 
 ```sh
