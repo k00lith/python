@@ -32,12 +32,7 @@ Sometimes you have to reinstall pip yourself (it happens for example when you ca
 # python3 get-pip.py --force-reinstall
 # pip install netmiko
 ```
-RUN it on 3-00 AM: 
-```sh
-# crontab -e
 
-00 03 * * * /usr/local/bin/python3.7 /home/parse_example.py
-```
 
 LOGIN AND PASSWORD in ENV store:
 ------------------------------------------------------------
@@ -138,3 +133,16 @@ systemctl daemon-reload
 ```shell
 systemctl list-timers refresh_config*
 ```
+
+---------------------------------------
+
+#### Crone example:
+
+RUN it on 3-00 AM: 
+```sh
+# crontab -e
+
+00 03 * * * /usr/local/bin/python3.7 /home/parse_example.py
+```
+
+
