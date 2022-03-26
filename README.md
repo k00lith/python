@@ -3,26 +3,38 @@ Python tools
 
 INSTALL PYTHON:
 ------------------------------------------------------------
-Install python 3.7 на CentOS7:
+Install python 3.9 на CentOS7:
 
 ```sh
-# yum update
-# yum install openssl-devel zlib-devel libffi-devel gcc -y
-# cd /usr/src 
-# wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
-# tar xzf Python-3.7.5.tgz
-# cd Python-3.7.5 
-# ./configure --enable-optimizations 
-# make altinstall
-# rm /usr/src/Python-3.7.5.tgz
-# pip3.7 install --upgrade pip
+yum update
+yum install openssl-devel zlib-devel libffi-devel gcc -y
+yum install bison byacc cscope ctags cvs diffstat doxygen flex gcc gcc-c++ gcc-gfortran gettext git indent intltool libtool patch patchutils rcs redhat-rpm-config rpm-build subversion swig systemtap -y
+yum groupinstall "Development Tools" -y
+shutdown -r now
+cd /usr/src 
+wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
+tar xzf Python-3.9.9.tgz
+cd Python-3.9.9 
+yum install devtoolset-8-gcc devtoolset-8-gcc-c++
+scl enable devtoolset-8 -- bash
+./configure --prefix=/usr  --enable-optimizations
+make
+make install
+rm /usr/src/Python-3.9.9.tgz
+pip3.9 install --upgrade pip
 ```
 
-Если нужно чтобы python был в директории /usr/bin/ (например /usr/bin/python3.7)
-```sh
-# ./configure --prefix=/usr  --enable-optimizations
-# make
-# make install
+
+После перезагрузки версия gcc слетает, впринципе, он нужен только для установки python.
+Проверить версию 
+```
+gcc -v
+```
+
+Апгрейд пип
+```
+python3.9 -m pip install --upgrade pip
+pip3.9 --version
 ```
 
 Sometimes you have to reinstall pip yourself (it happens for example when you can't install modul netmiko because of stupid error you don't know, as fast resolve it is good, one time it helps me :)):
